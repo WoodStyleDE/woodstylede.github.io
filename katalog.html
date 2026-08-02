@@ -8,53 +8,119 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">WoodStyle</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Startseite</a></li>
-                <li class="dropdown">
-                    <a href="katalog.html" class="dropbtn active">Katalog ▾</a>
-                    <div class="dropdown-content">
-                        <a href="katalog.html#schneidebretter">Schneidebretter</a>
-                        <a href="katalog.html#untersetzer">Untersetzer</a>
-                        <a href="katalog.html#bilder">Bilder & Porträts</a>
-                        <a href="katalog.html#sonstiges">Sonstiges</a>
-                    </div>
-                </li>
-                <li><a href="ueber-uns.html">Über uns</a></li>
-                <li><a href="versand.html">Versand & Zahlung</a></li>
-                <li><a href="kontakt.html">Kontakte & Bestellung</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Aktualisierter Header mit Burger-Menü -->
+    <header class="navbar">
+        <div class="container">
 
-    <section class="section container">
-        <h2>Unser Katalog</h2>
-        <div class="features">
-            <div id="schneidebretter" class="feature-card">
-                <h3>Schneidebretter</h3>
-                <p>Hochwertige Schneidebretter aus Massivholz, ideal für Küche und Servieren.</p>
-                <p class="price">ab 30 €</p>
-            </div>
-            <div id="untersetzer" class="feature-card">
-                <h3>Untersetzer</h3>
-                <p>Stilvolle Holzuntersetzer für Tassen, Gläser und Töpfe.</p>
-                <p class="price">ab 15 €</p>
-            </div>
-            <div id="bilder" class="feature-card">
-                <h3>Bilder & Porträts (Brandmalerei)</h3>
-                <p>Präzise Brandmalerei auf Holz nach Ihrem Lieblingsfoto.</p>
-                <p class="price">ab 45 €</p>
-            </div>
-            <div id="sonstiges" class="feature-card">
-                <h3>Sonstiges</h3>
-                <p>Kreative Holzdekorationen, Schlüsselanhänger und Souvenirs.</p>
-                <p class="price">ab 10 €</p>
-            </div>
-        </div>
-    </section>
+            <a href="index.html" class="logo">
+                WoodStyle
+            </a>
 
+            <button class="burger-btn"
+                    id="burgerBtn"
+                    aria-label="Menü öffnen"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="index.html" class="nav-link">
+                            Startseite
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="katalog.html"
+                           class="nav-link dropdown-toggle active">
+                            Katalog ▼
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#schneidebretter">
+                                    Schneidebretter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#untersetzer">
+                                    Untersetzer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#bilder">
+                                    Bilder &amp; Porträts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sonstiges">
+                                    Sonstiges
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="ueber-uns.html"
+                           class="nav-link">
+                            Über uns
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="versand.html"
+                           class="nav-link">
+                            Versand &amp; Zahlung
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kontakt.html"
+                           class="nav-link">
+                            Kontakte &amp; Bestellung
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main>
+        <section class="section container">
+            <h2>Unser Katalog</h2>
+            <div class="features">
+                <div id="schneidebretter" class="feature-card">
+                    <h3>Schneidebretter</h3>
+                    <p>Hochwertige Schneidebretter aus Massivholz, ideal für Küche und Servieren.</p>
+                    <p class="price">ab 30 €</p>
+                </div>
+                <div id="untersetzer" class="feature-card">
+                    <h3>Untersetzer</h3>
+                    <p>Stilvolle Holzuntersetzer für Tassen, Gläser und Töpfe.</p>
+                    <p class="price">ab 15 €</p>
+                </div>
+                <div id="bilder" class="feature-card">
+                    <h3>Bilder &amp; Porträts (Brandmalerei)</h3>
+                    <p>Präzise Brandmalerei auf Holz nach Ihrem Lieblingsfoto.</p>
+                    <p class="price">ab 45 €</p>
+                </div>
+                <div id="sonstiges" class="feature-card">
+                    <h3>Sonstiges</h3>
+                    <p>Kreative Holzdekorationen, Schlüsselanhänger und Souvenirs.</p>
+                    <p class="price">ab 10 €</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fußzeile -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 WoodStyle. Alle Rechte vorbehalten.</p>
@@ -62,5 +128,33 @@
         </div>
     </footer>
 
+    <!-- Mobile Navigation Skript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerBtn = document.getElementById("burgerBtn");
+            const navMenu = document.getElementById("navMenu");
+
+            if (burgerBtn && navMenu) {
+                burgerBtn.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    navMenu.classList.toggle("active");
+                });
+
+                document.addEventListener("click", () => {
+                    navMenu.classList.remove("active");
+                });
+
+                navMenu.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                });
+
+                document.querySelectorAll(".nav-link").forEach(link => {
+                    link.addEventListener("click", () => {
+                        navMenu.classList.remove("active");
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
