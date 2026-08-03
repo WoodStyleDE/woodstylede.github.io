@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog | WoodStyle</title>
+    <title>Katalog | WoodStyle - Handgefertigte Holzprodukte</title>
+    <meta name="description" content="Entdecken Sie unsere Schneidebretter, Untersetzer und Brandmalerei auf Holz.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
-    <!-- Aktualisierter Header mit Burger-Menü -->
     <header class="navbar">
         <div class="container">
+            <a href="index.html" class="logo">WoodStyle</a>
 
-            <a href="index.html" class="logo">
-                WoodStyle
-            </a>
-
-            <button class="burger-btn"
-                    id="burgerBtn"
-                    aria-label="Menü öffnen"
-                    aria-expanded="false">
+            <button class="burger-btn" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -27,71 +23,26 @@
 
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-
-                    <li>
-                        <a href="index.html" class="nav-link">
-                            Startseite
-                        </a>
-                    </li>
-
+                    <li><a href="index.html" class="nav-link">Startseite</a></li>
                     <li class="dropdown">
-                        <a href="katalog.html"
-                           class="nav-link dropdown-toggle active">
+                        <a href="katalog.html" class="nav-link dropdown-toggle active" aria-expanded="false">
                             Katalog ▼
                         </a>
-
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="#schneidebretter">
-                                    Schneidebretter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#untersetzer">
-                                    Untersetzer
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#bilder">
-                                    Bilder &amp; Porträts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#sonstiges">
-                                    Sonstiges
-                                </a>
-                            </li>
+                            <li><a href="#schneidebretter">Schneidebretter</a></li>
+                            <li><a href="#untersetzer">Untersetzer</a></li>
+                            <li><a href="#bilder">Bilder &amp; Porträts</a></li>
+                            <li><a href="#sonstiges">Sonstiges</a></li>
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="ueber-uns.html"
-                           class="nav-link">
-                            Über uns
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="versand.html"
-                           class="nav-link">
-                            Versand &amp; Zahlung
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="kontakt.html"
-                           class="nav-link">
-                            Kontakte &amp; Bestellung
-                        </a>
-                    </li>
-
+                    <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+                    <li><a href="versand.html" class="nav-link">Versand &amp; Zahlung</a></li>
+                    <li><a href="kontakt.html" class="nav-link">Kontakte &amp; Bestellung</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
-    <!-- Hauptinhalt -->
     <main>
         <section class="section container">
             <h2>Unser Katalog</h2>
@@ -100,61 +51,48 @@
                     <h3>Schneidebretter</h3>
                     <p>Hochwertige Schneidebretter aus Massivholz, ideal für Küche und Servieren.</p>
                     <p class="price">ab 30 €</p>
+                    <div class="card-action">
+                        <a href="https://wa.me/4915232161777?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Schneidebretter." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">Jetzt anfragen</a>
+                    </div>
                 </div>
                 <div id="untersetzer" class="feature-card">
                     <h3>Untersetzer</h3>
                     <p>Stilvolle Holzuntersetzer für Tassen, Gläser und Töpfe.</p>
                     <p class="price">ab 15 €</p>
+                    <div class="card-action">
+                        <a href="https://wa.me/4915232161777?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Untersetzer." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">Jetzt anfragen</a>
+                    </div>
                 </div>
                 <div id="bilder" class="feature-card">
                     <h3>Bilder &amp; Porträts (Brandmalerei)</h3>
                     <p>Präzise Brandmalerei auf Holz nach Ihrem Lieblingsfoto.</p>
                     <p class="price">ab 45 €</p>
+                    <div class="card-action">
+                        <a href="https://wa.me/4915232161777?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Brandmalerei." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">Jetzt anfragen</a>
+                    </div>
                 </div>
                 <div id="sonstiges" class="feature-card">
                     <h3>Sonstiges</h3>
                     <p>Kreative Holzdekorationen, Schlüsselanhänger und Souvenirs.</p>
                     <p class="price">ab 10 €</p>
+                    <div class="card-action">
+                        <a href="https://wa.me/4915232161777?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Holzdekorationen." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">Jetzt anfragen</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Fußzeile -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 WoodStyle. Alle Rechte vorbehalten.</p>
-            <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+            <p>© 2026 WoodStyle. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <span>|</span>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Mobile Navigation Skript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const burgerBtn = document.getElementById("burgerBtn");
-            const navMenu = document.getElementById("navMenu");
-
-            if (burgerBtn && navMenu) {
-                burgerBtn.addEventListener("click", (event) => {
-                    event.stopPropagation();
-                    navMenu.classList.toggle("active");
-                });
-
-                document.addEventListener("click", () => {
-                    navMenu.classList.remove("active");
-                });
-
-                navMenu.addEventListener("click", (event) => {
-                    event.stopPropagation();
-                });
-
-                document.querySelectorAll(".nav-link").forEach(link => {
-                    link.addEventListener("click", () => {
-                        navMenu.classList.remove("active");
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>

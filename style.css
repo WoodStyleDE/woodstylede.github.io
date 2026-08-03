@@ -67,7 +67,6 @@ img {
   display: block;
 }
 
-/* Универсальные плавные переходы */
 a,
 button,
 .btn,
@@ -122,7 +121,6 @@ main {
   text-align: center;
 }
 
-/* Текстовые блоки (Über uns, Kontakte) */
 .about-text, 
 .contact-text {
   max-width: 700px;
@@ -132,7 +130,6 @@ main {
   color: var(--text-light);
 }
 
-/* Юридические страницы (Impressum, Datenschutz) */
 .legal-content {
   max-width: 800px;
   margin: 0 auto;
@@ -182,11 +179,6 @@ main {
   text-align: center;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .hero h1 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 15px;
@@ -199,15 +191,8 @@ main {
   margin-bottom: 30px;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
 /* ==========================================
-   4. ШАПКА САЙТА (HEADER) И НАВИГАЦИЯ
+   4. ШАПКА САЙТА И НАВИГАЦИЯ
    ========================================== */
 .navbar {
   background-color: var(--header-bg);
@@ -251,7 +236,6 @@ main {
   border-bottom: 2px solid var(--accent);
 }
 
-/* Выпадающее меню Katalog (ПК + Навигация с клавиатуры) */
 .dropdown {
   position: relative;
 }
@@ -291,7 +275,6 @@ main {
   color: var(--text);
 }
 
-/* Кнопка "Гамбургер" */
 .burger-btn {
   display: none;
   flex-direction: column;
@@ -342,15 +325,6 @@ main {
   border-color: #444444;
 }
 
-.product-image,
-.feature-card img {
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  width: 100%;
-  height: 200px;
-}
-
 .feature-card h3,
 .product-card h3 {
   font-size: 20px;
@@ -370,7 +344,11 @@ main {
   font-weight: bold;
   color: var(--whatsapp) !important;
   margin-top: 15px;
-  margin-bottom: 0 !important;
+  margin-bottom: 15px !important;
+}
+
+.card-action {
+  margin-top: 10px;
 }
 
 /* ==========================================
@@ -422,6 +400,11 @@ main {
   cursor: pointer;
   text-align: center;
   border: 2px solid transparent;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
 .btn:hover {
@@ -493,8 +476,9 @@ main {
   color: var(--text);
 }
 
+/* Исправление WCAG AA доступности контраста разделителя */
 .footer-links span {
-  color: #444444;
+  color: #777777;
 }
 
 /* ==========================================
@@ -538,7 +522,6 @@ main {
     padding: 8px 0;
   }
 
-  /* Мобильное подменю каталога (управляется классом .open через JS) */
   .dropdown-menu {
     position: static;
     display: none;
@@ -550,12 +533,15 @@ main {
     border-radius: 4px;
   }
 
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
   .legal-content {
     padding: 20px;
   }
 
-  .buttons,
-  .hero-buttons {
+  .buttons {
     flex-direction: column;
   }
 

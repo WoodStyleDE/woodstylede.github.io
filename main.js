@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownToggle = document.querySelector(".dropdown-toggle");
     const dropdown = document.querySelector(".dropdown");
 
-    // Универсальная функция закрытия всех меню
+    // Универсальная функция закрытия всех мобильных и выпадающих меню
     function closeMenu() {
         if (navMenu) {
             navMenu.classList.remove("active");
@@ -20,23 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Бургер-меню
+    // Обработка клика по бургер-кнопке
     if (burgerBtn && navMenu) {
-        burgerBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
+        burgerBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             const isOpen = navMenu.classList.toggle("active");
-            burgerBtn.setAttribute("aria-expanded", isOpen);
+            burgerBtn.setAttribute("aria-expanded", String(isOpen));
         });
 
-        document.addEventListener("click", () => {
-            closeMenu();
+        // Закрываем меню при клике вне его области
+        document.addEventListener("click", closeMenu);
+
+        navMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
         });
 
-        navMenu.addEventListener("click", (event) => {
-            event.stopPropagation();
-        });
-
-        // Закрываем меню при клике на любую обычную ссылку
+        // Закрываем мобильное меню при переходе по ссылке (кроме самого дропдауна)
         navMenu.querySelectorAll("a").forEach(link => {
             if (!link.classList.contains("dropdown-toggle")) {
                 link.addEventListener("click", closeMenu);
@@ -44,20 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Дропдаун Katalog на мобильных
+    // Обработка аккордеона/дропдауна "Katalog" на мобильных экранах
     if (dropdownToggle && dropdown) {
         dropdownToggle.setAttribute("aria-haspopup", "true");
 
-        dropdownToggle.addEventListener("click", (event) => {
+        dropdownToggle.addEventListener("click", (e) => {
             if (window.innerWidth <= 850) {
-                event.preventDefault();
+                e.preventDefault();
                 const isOpen = dropdown.classList.toggle("open");
-                dropdownToggle.setAttribute("aria-expanded", isOpen);
+                dropdownToggle.setAttribute("aria-expanded", String(isOpen));
             }
         });
     }
 
-    // Сброс состояний при повороте устройства или изменении размера окна
+    // Доступность: закрытие по нажатию клавиши Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // Сброс состояний при смене разрешения (например, поворот экрана)
     window.addEventListener("resize", () => {
         if (window.innerWidth > 850) {
             closeMenu();
